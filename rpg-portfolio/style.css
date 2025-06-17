@@ -1,0 +1,386 @@
+:root {
+  --bg: #0d0d0d;
+  --text: #ffffff;
+  --accent: #00ffcc;
+  --text-secondary: #cccccc;
+  --transition-speed: 0.3s;
+}
+
+:root.light-mode {
+  --bg: #f4f4f4;
+  --text: #111;
+  --accent: #0077cc;
+  --text-secondary: #444;
+}
+:root.light-mode .site-footer {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--accent);
+}
+
+/* Optional fade transition */
+body.theme-fade {
+  transition: none !important;
+  opacity: 0.4;
+}
+
+body {
+  margin: 0;
+  background: var(--bg) url('assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  overflow-x: hidden;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.menu a {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease-in;
+}
+
+.menu a:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.typewriter {
+  width: 90%;
+  margin: 1.5rem auto;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid var(--accent);
+  animation: typing 3s steps(30) 1, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 90% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.toggle-dark {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  z-index: 999;
+  transition: background 0.3s, color 0.3s;
+}
+
+.toggle-dark:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+* {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    filter 0.4s ease;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  border-top: 1px solid var(--accent);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.site-footer p {
+  margin: 0.5rem 0;
+  color: var(--text);
+  transition: color 0.4s ease;
+}
+
+.uchiha-logo {
+  width: 100px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 5px var(--accent));
+  transition: filter 0.4s ease;
+}
+
+.site-footer p:hover {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+@keyframes sharingan-glow {
+  from {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px red);
+  }
+  to {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px red);
+  }
+
+
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+
+.missions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.mission-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 8px var(--accent-transparent);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  color: var(--text);
+}
+
+  body.light-mode .mission-card {
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.mission-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+
+.mission-card h2 {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.mission-card p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.mission-card a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+
+
+.terminal-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: rgba(0,0,0,0.75);
+  padding: 1.5rem;
+  border: 2px dashed #00ffcc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffcc44;
+  text-align: left;
+}
+
+.terminal-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.terminal-form input,
+.terminal-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #00ffcc88;
+  border-radius: 5px;
+  background: black;
+  color: #00ffcc;
+  font-family: monospace;
+}
+
+.terminal-form button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.terminal-form button:hover {
+  background-color: #00ddaa;
+}
+
+
+#hackerText {
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid #00ffcc;
+   animation: typing 3s steps(30) 1, blink 0.7s step-end infinite;
+}
+
+
+.status {
+  text-align: center;
+  color: #00ffcc;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.stats {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(0,0,0,0.6);
+  padding: 1rem;
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 50%;
+  border: 2px solid #00ffcc;
+}
+
+.attributes, .skills, .equipment {
+  background: rgba(0,0,0,0.5);
+  border-left: 4px solid #00ffcc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.attributes ul, .skills ul, .equipment ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.attributes li, .skills li, .equipment li {
+  padding: 0.3rem 0;
+  color: #ccc;
+}
+
+.download-btn {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 6px #00ffcc88;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #00e6b3;
+}
+
+
+.skills {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skills .skill {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 4px solid #00ffcc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.skills .level {
+  float: right;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+.xp-bar {
+  background: #333;/* base bar background stays dark for both themes */
+  border: 1px solid #555;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 6px;
+}
+
+.xp {
+  background: var(--accent); /* this changes based on dark/light mode */
+  height: 100%;
+  width: 0%;
+  transition: width 0.8s ease, background 0.3s ease;
+}
+
+
+

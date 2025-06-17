@@ -1,0 +1,82 @@
+<!-- resume.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00ffcc" />
+  <meta name="description" content="Character Sheet for ZeroTrace. View cybersecurity stats, skills, tools and download the operator’s PDF resume." />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- ✅ Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+  <title>🎮 Character Sheet | HackerRPG</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button id="toggle-dark" class="toggle-dark">🌙</button>
+      <a href="resume.pdf" class="download-btn" download>📄 Download PDF Version</a>
+      <h1>🎮 Character Sheet</h1>
+      <p class="subtitle">Stats, Skills & Loadout of the Operator</p>
+      <a href="index.html" class="back">⬅️ Return to Terminal</a>
+    </header>
+
+    <main class="stats">
+      <section class="profile">
+        <img src="assets/avatar.png" alt="Avatar" class="avatar" />
+        <div>
+          <h2>Code Name: <span>ZeroTrace</span></h2>
+          <p>Level: <strong>19</strong></p>
+          <p>XP: 3450 / 5000</p>
+        </div>
+      </section>
+
+      <section class="attributes">
+        <h3>Attributes</h3>
+        <ul>
+          <li>🧠 Intelligence: 92</li>
+          <li>⚙️ Engineering: 87</li>
+          <li>🕵️ Stealth: 78</li>
+          <li>📡 Networking: 84</li>
+          <li>💬 Social Engineering: 70</li>
+        </ul>
+      </section>
+
+      <section class="skills">
+        <h3>Skills Unlocked</h3>
+        <ul>
+          <li>🔓 Ethical Hacking - CEH Training</li>
+          <li>🔐 Wi-Fi Exploitation - AR9271 Toolkit</li>
+          <li>🌐 Web App Pentesting - OWASP Top 10</li>
+          <li>🎨 PWA Developer - Anime Portfolio</li>
+          <li>🧠 OSINT Recon Specialist</li>
+        </ul>
+      </section>
+
+      <section class="equipment">
+        <h3>Loadout</h3>
+        <ul>
+          <li>🖥️ OS: Parrot OS / Windows 11</li>
+          <li>🔧 Tools: Burp Suite, Nmap, Metasploit</li>
+          <li>📦 Projects: HackerRPG, WiFi Sniffer, OS Game</li>
+          <li>🚀 Hosting: GitHub Pages, Formspree</li>
+        </ul>
+      </section>
+
+      <section class="missions-link">
+        <h3>🎯 View Missions</h3>
+        <a href="missions.html" class="download-btn">🗺️ Open Missions Board</a>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!-- skills.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#00ffcc" />
+  <meta name="description" content="Explore the Skill Tree of Kifaru, featuring cybersecurity, ethical hacking, and dev growth paths." />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- ✅ Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+  <title>🧠 Skill Tree | HackerRPG</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button id="toggle-dark" class="toggle-dark">🌙</button>
+      <h1>🧠 Skill Tree</h1>
+      <p class="subtitle">Your growth path in the hacking & dev realms</p>
+      <a href="index.html" class="back">⬅️ Return to Terminal</a>
+    </header>
+
+    <main class="skills">
+      <div class="skill">
+        <p>🔓 Ethical Hacking <span class="level">Lv. 4</span></p>
+        <div class="xp-bar"><div class="xp"   data-xp="80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>🌐 Web App Pentesting <span class="level">Lv. 3</span></p>
+        <div class="xp-bar"><div class="xp" data-xp="65%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>📡 WiFi Exploitation <span class="level">Lv. 2</span></p>
+        <div class="xp-bar"><div class="xp" data-xp="40%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>🎨 PWA & Frontend Dev <span class="level">Lv. 3</span></p>
+        <div class="xp-bar"><div class="xp" data-xp="70%"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>🔍 OSINT Recon <span class="level">Lv. 2</span></p>
+        <div class="xp-bar"><div class="xp" data-xp="45%"></div></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".xp").forEach(bar => {
+      const target = bar.getAttribute("data-xp") || "0";
+      bar.style.width = target;
+    });
+  });
+</script>
+</body>
+</html>
+

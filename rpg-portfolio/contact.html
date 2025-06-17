@@ -1,0 +1,95 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>📡 Send Transmission | HackerRPG</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+        <button id="toggle-dark" class="toggle-dark">🌙</button>
+      <h1>📡 Send Encrypted Transmission</h1>
+      <p class="subtitle">Use this secure terminal to reach the operator</p>
+      <a href="index.html" class="back">⬅️ Return to Terminal</a>
+      <div id="hackerText" class="typewriter"></div>
+    </header>
+
+    <main>
+<form class="terminal-form" action="https://formspree.io/f/xdkzzjbb" method="POST" id="contact-form">
+  <label>🔤 Code "Your name" Name:</label>
+  <input type="text" name="name" required />
+
+  <label>📬 Comm Frequency (Email):</label>
+  <input type="email" name="email" required />
+
+  <label>📝 Mission Brief:</label>
+  <textarea name="message" rows="5" required></textarea>
+
+  <button type="submit">📤 Transmit</button>
+</form>
+
+<p class="status" id="status"></p>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('status');
+  const keySound = document.getElementById("keySound");
+  const beepSound = document.getElementById("beepSound");
+  const successSound = document.getElementById("successSound");
+
+  function play(sound) {
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play();
+    }
+  }
+
+  function typeWithSound(text, elementId, delay = 50) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    let index = 0;
+    const interval = setInterval(() => {
+      el.textContent += text.charAt(index);
+      play(keySound);
+      index++;
+      if (index >= text.length) clearInterval(interval);
+    }, delay);
+  }
+
+  // Animate welcome line
+  typeWithSound(">> Initializing secure terminal link...", "hackerText");
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    play(beepSound);
+    status.textContent = "📡 Transmitting...";
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        play(successSound);
+        status.textContent = "✅ Transmission received. Stand by for reply.";
+        form.reset();
+      } else {
+        status.textContent = "⚠️ Transmission failed. Try again later.";
+      }
+    } catch (err) {
+      status.textContent = "💥 System error. Message not sent.";
+    }
+  });
+</script>
+<script src="app.js"></script>
+<audio id="keySound" src="assets/sounds/typewriter-key.mp3" preload="auto"></audio>
+<audio id="successSound" src="assets/sounds/mission-success.mp3" preload="auto"></audio>
+</body>
+</html>
