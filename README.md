@@ -4,7 +4,7 @@
 
 Welcome to **HackerRPG** – a themed, terminal-style cybersecurity portfolio inspired by RPGs, anime aesthetics, and hacker culture. Built by **Kifaru**, a digital shinobi on a quest to master ethical hacking, dev skills, and cyber warfare.
 
-![screenshot](assets/screenshot.png)
+![screenshot](assets/Screenshot .png)
 
 ---
 
