@@ -43,7 +43,7 @@
   function play(sound) {
     if (sound) {
       sound.currentTime = 0;
-      sound.play();
+      sound.play().catch(err => console.warn("Audio play error:", err));
     }
   }
 
@@ -60,9 +60,12 @@
     }, delay);
   }
 
-  // Animate welcome line
- typeWithSound(">> Initializing secure terminal link...\n>> Access granted.\n>> Welcome, Operator.", "hackerText");
-
+  // 🧠 Wait for any click to start typing and sound (user interaction required)
+  document.addEventListener('click', () => {
+    if (!document.getElementById('hackerText').textContent.trim()) {
+      typeWithSound(">> Initializing secure terminal link...\n>> Access granted.\n>> Welcome, Operator.", "hackerText");
+    }
+  }, { once: true });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -89,6 +92,7 @@
     }
   });
 </script>
+
 <script src="app.js"></script>
 <audio id="keySound" src="assets/sounds/typewriter-key.mp3" preload="auto"></audio>
 <audio id="successSound" src="assets/sounds/mission-success.mp3" preload="auto"></audio>
