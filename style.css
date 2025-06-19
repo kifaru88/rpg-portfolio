@@ -1,3 +1,4 @@
+/*index-style*/
 :root {
   --bg: #0d0d0d;
   --text: #ffffff;
@@ -169,6 +170,7 @@ html, body {
   flex: 1;
 }
 
+/*missions-style*/
 
 .missions {
   display: flex;
@@ -223,6 +225,7 @@ html, body {
 }
 
 
+/*contact-style*/
 
 .terminal-form {
   max-width: 500px;
@@ -280,6 +283,16 @@ html, body {
    animation: typing 3s steps(30) 1, blink 0.7s step-end infinite;
 }
 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/*Resune style*/
 
 .status {
   text-align: center;
