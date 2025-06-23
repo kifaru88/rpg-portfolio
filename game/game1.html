@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🧠 Pixel Memory Match</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      gap: 12px;
+    }
+    .card {
+      width: 80px;
+      height: 80px;
+      background: #1a1a1a;
+      border: 2px solid #00ffcc88;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
+    .card img {
+      width: 60%;
+      display: none;
+    }
+    .card.revealed img {
+      display: block;
+    }
+    .card.matched {
+      background: #00ffcc33;
+      cursor: default;
+    }
+    #message {
+      margin-top: 1rem;
+      color: #00ffaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Memory Match</h1>
+  <div class="grid" id="grid"></div>
+  <div id="message"></div>
+
+  <audio id="flip-sound" src="flip.mp3" preload="auto"></audio>
+  <audio id="match-sound" src="match.mp3" preload="auto"></audio>
+  <audio id="win-sound" src="win.mp3" preload="auto"></audio>
+
+  <script>
+    const icons = [
+      "pixel-icons/cpu.png",
+      "pixel-icons/hack.png",
+      "pixel-icons/terminal.png",
+      "pixel-icons/key.png",
+      "pixel-icons/virus.png",
+      "pixel-icons/shield.png",
+      "pixel-icons/code.png",
+      "pixel-icons/lock.png"
+    ];
+
+    const grid = document.getElementById("grid");
+    const message = document.getElementById("message");
+    const flipSound = document.getElementById("flip-sound");
+    const matchSound = document.getElementById("match-sound");
+    const winSound = document.getElementById("win-sound");
+
+    let selected = [];
+    let matched = 0;
+
+    function shuffle(array) {
+      return array.concat(array).sort(() => 0.5 - Math.random());
+    }
+
+    function createCard(src) {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      const img = document.createElement("img");
+      img.src = src;
+      card.appendChild(img);
+
+      card.addEventListener("click", () => {
+        if (card.classList.contains("revealed") || card.classList.contains("matched") || selected.length === 2) return;
+
+        flipSound.currentTime = 0;
+        flipSound.play();
+
+        card.classList.add("revealed");
+        selected.push({ card, src });
+
+        if (selected.length === 2) {
+          const [a, b] = selected;
+          if (a.src === b.src) {
+            matchSound.play();
+            a.card.classList.add("matched");
+            b.card.classList.add("matched");
+            matched += 2;
+            selected = [];
+            if (matched === icons.length * 2) {
+              winSound.play();
+              message.textContent = "🎉 You matched them all!";
+            }
+          } else {
+            setTimeout(() => {
+              a.card.classList.remove("revealed");
+              b.card.classList.remove("revealed");
+              selected = [];
+            }, 800);
+          }
+        }
+      });
+
+      return card;
+    }
+
+    function initGame() {
+      grid.innerHTML = "";
+      matched = 0;
+      selected = [];
+      const shuffled = shuffle(icons);
+      shuffled.forEach(icon => grid.appendChild(createCard(icon)));
+      message.textContent = "";
+    }
+
+    initGame();
+  </script>
+</body>
+</html>

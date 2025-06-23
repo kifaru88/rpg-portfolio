@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💻 Codebreaker Terminal</title>
+  <style>
+    body {
+      background: #000;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .terminal {
+      background: #111;
+      border: 2px solid #00ff88;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ff88;
+    }
+
+    #output {
+      min-height: 150px;
+      margin-bottom: 1rem;
+      white-space: pre-wrap;
+    }
+
+    #input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1.1rem;
+      background: #000;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      border-radius: 4px;
+    }
+
+    #input:focus {
+      outline: none;
+      box-shadow: 0 0 6px #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div id="output"></div>
+    <input type="text" id="input" autocomplete="off" placeholder="Type your answer here..." />
+  </div>
+
+  <audio id="type-sfx" src="assets/sfx/type.wav" preload="auto"></audio>
+  <audio id="success-sfx" src="assets/sfx/success.wav" preload="auto"></audio>
+  <audio id="fail-sfx" src="assets/sfx/fail.wav" preload="auto"></audio>
+
+  <script src="js/codebreaker.js"></script>
+</body>
+</html>
+
