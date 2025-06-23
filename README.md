@@ -1,53 +1,59 @@
 # rpg-portfolio
 
-# 🧠 HackerRPG – Cybersecurity Terminal Portfolio
+# 🧠 RPG – Cybersecurity Terminal Portfolio
 
-Welcome to **HackerRPG** – a themed, terminal-style cybersecurity portfolio inspired by RPGs, anime aesthetics, and hacker culture. Built by **Kifaru**, a digital shinobi on a quest to master ethical hacking, dev skills, and cyber warfare.
+Welcome to **RPG**, a themed, terminal-style cybersecurity portfolio inspired by RPGs, anime aesthetics, and hacker culture. Built by **Kifaru**, a digital shinobi on a quest to master ethical hacking, creative development, and cyber warfare.
 
 ![screenshot](assets/Screenshot.png)
 
 ---
 
 ## ⚡ Live Demo
-[🔗 View the Portfolio](https://kifaru88.github.io/rpg-portfolio/))
+[🔗 View the Portfolio](https://kifaru88.github.io/rpg-portfolio/)
 
 ---
 
 ## 🧩 Features
 
-- 🎮 Terminal-style home screen with interactive UI
-- 🌙 Dark/Light mode toggle with background switch
-- 🧠 Skill tree with XP-based progress bars
-- 🗂️ Missions section for project showcases
-- 📜 Resume & 📡 Contact pages
-- ⚙️ PWA-ready with service worker support
-- 🎨 Anime vibes + animated transitions
-- 🥷 Footer styled like a Uchiha scroll
+- 🎮 Terminal-style UI with RPG-themed design
+- 🌙 Dark/Light mode toggle with anime-style transitions
+- 🧠 Interactive skill tree with XP progress bars
+- 🗂️ Mission log for real-world projects
+- 📜 Downloadable resume section
+- 📡 Contact terminal with hacker-style form
+- 🔓 Offline-ready (PWA) with service worker
+- 🎨 Custom artwork, Uchiha footer + pixel art icons
+- 🕹️ **Mini-Games embedded via modal launcher**:
+  - 🧠 **Memory Match** – pixel-art cyber card flip game
+  - 🧾 **Codebreaker Terminal** – terminal-style code cracking game
+  - 🔓 **Cipher Run** – obstacle runner built with Canvas API
 
 ---
 
-## 📁 Pages
+## 🧾 Pages
 
-- `index.html` – Terminal home
-- `skills.html` – Interactive skill tree
-- `missions.html` – Portfolio projects
-- `resume.html` – Education & certifications
-- `contact.html` – Reach out
-- `style.css` – Full theme styling
-- `app.js` – Mode toggle, animation hooks, PWA logic
+- `index.html` – Hacker terminal homepage
+- `skills.html` – Skill XP bars & categories
+- `missions.html` – Project quests
+- `resume.html` – Training & certifications
+- `contact.html` – Hacker-style contact form
+- `game/` – Mini-game folder (`game1.html`, `game2.html`, `game3.html`)
+- `style.css` – Main UI styling (RPG + dark mode)
+- `app.js` – Theme toggle, modal logic, game loader
+- `manifest.json` – PWA manifest
+- `sw.js` – Service worker
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML5, CSS3, JavaScript (Vanilla)
-- PWA (Progressive Web App)
-- LocalStorage (theme persistence)
-- Responsive & Mobile-First Design
-- ⚔️ Pure frontend – no frameworks
+- HTML5, CSS3, Vanilla JavaScript
+- Canvas API (for game3)
+- Progressive Web App (PWA)
+- LocalStorage (theme + mode persistence)
+- Responsive Design + Mobile-Friendly
 
 ---
-
 
 🌙 Dark & ☀️ Light Mode
 
