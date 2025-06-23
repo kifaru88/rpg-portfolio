@@ -25,7 +25,7 @@
     <header>
       <button id="toggle-dark" class="toggle-dark">🌙 Toggle Mode</button>
       <img src="assets/logo.png" alt="Hacker Logo" class="logo" />
-      <h1>🧠 CyberSecurity Profile: Kifaru </h1>
+   <h1><span id="open-game" style="cursor:pointer;">🧠</span> CyberSecurity Profile: Kifaru </h1>
       <p class="subtitle">Status: Active • Rank: Cyber Ninja</p>
     </header>
 
@@ -43,10 +43,17 @@
   <script src="app.js"></script>
 <footer class="site-footer">
   <img src="assets/uchiha-logo.png" alt="Uchiha Clan Logo" class="uchiha-logo" />
-  <p><em>&copy; EKC </em></p>
+  <p><em>&copy; html.com</em></p>
   <p><strong>Welcome to The UCHIHA CLAN</strong></p>
 </footer>
-
+<div id="game-modal" class="game-modal">
+  <div class="game-content">
+    <div class="game-header">
+      <button id="close-game" class="close-button">❌ Close</button>
+    </div>
+    <iframe id="game-frame" class="game-frame" src="" title="Mini Game"></iframe>
+  </div>
+</div>
 
 </body>
 </html>
