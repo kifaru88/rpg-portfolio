@@ -71,7 +71,9 @@ Terminal Mode	Skill Tree	Light Mode
 
 Kifaru
 Cybersecurity Padawan 🐘
-Twitter · GitHub · LinkedIn
+<a href="https://twitter.com/your_username" target="_blank">Twitter</a>
+<a href="https://github.com/your_username" target="_blank">GitHub</a>
+<a href="https:// LinkedIn.com/your_username](https://www.linkedin.com/in/emmanuel-cheboi-7994b5227?trk=contact-info" target="_blank"> LinkedIn</a>
 📜 License
 
       EKC © 2025 Kifaru
