@@ -80,6 +80,7 @@ Cybersecurity Padawan 🐘
 <a href="https://twitter.com/your_username" target="_blank">Twitter</a>
 <a href="https://github.com/kifaru88" target="_blank">GitHub</a>
 <a href="https://www.linkedin.com/in/emmanuel-cheboi-7994b5227?trk=contact-info" target="_blank"> LinkedIn</a>
+
 📜 License
 
       EKC © 2025 Kifaru
